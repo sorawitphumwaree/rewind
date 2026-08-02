@@ -1,6 +1,6 @@
 # Security policy
 
-This pre-release repository has no supported release line yet. Do not include
+The latest `0.1.x` release receives best-effort security fixes. Do not include
 secrets, personal data, or production incident payloads in reports.
 
 Until a private reporting channel is configured, contact the maintainer privately

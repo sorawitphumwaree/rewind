@@ -10,7 +10,7 @@ InitializationResult initialization = RewindRecorder.Initialize(new RewindOption
 
 Console.WriteLine($"Recorder initialization: {initialization.Status}");
 RewindRecorder.SetContext("MachineId", "PLAYGROUND-01");
-RewindRecorder.SetContext("SoftwareVersion", "0.1.0-alpha.1");
+RewindRecorder.SetContext("SoftwareVersion", "0.1.0");
 
 int cycle = 0;
 bool running = true;

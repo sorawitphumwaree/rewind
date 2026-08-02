@@ -17,13 +17,13 @@ according to the configured SDK queue limits.
 Install the SDK from nuget.org:
 
 ```powershell
-dotnet add package Rewind.Sdk --version 0.1.0-alpha.1
+dotnet add package Rewind.Sdk --version 0.1.0
 ```
 
 For a .NET Framework project using Visual Studio Package Manager Console:
 
 ```powershell
-Install-Package Rewind.Sdk -Version 0.1.0-alpha.1
+Install-Package Rewind.Sdk -Version 0.1.0
 ```
 
 The single `Rewind.Sdk` installation automatically resolves the matching
@@ -38,7 +38,7 @@ From the matching GitHub Release, download:
 The Agent package is self-contained for Windows x64. The target PC does not need
 a separate .NET runtime for the Agent.
 
-Public-alpha Agent artifacts are checksum-verified but unsigned. Verify the downloaded
+Public Agent artifacts are checksum-verified but unsigned. Verify the downloaded
 ZIP against `SHA256SUMS.txt` before extracting it. If Windows marks the verified
 files as downloaded and blocks them, unblock only the extracted Rewind files:
 

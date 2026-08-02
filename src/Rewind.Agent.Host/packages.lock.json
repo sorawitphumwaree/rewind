@@ -317,19 +317,19 @@
       "rewind.agent.core": {
         "type": "Project",
         "dependencies": {
-          "Rewind.Protocol": "[0.1.0-alpha.1, )"
+          "Rewind.Protocol": "[0.1.0, )"
         }
       },
       "rewind.protocol": {
         "type": "Project",
         "dependencies": {
-          "Rewind.Abstractions": "[0.1.0-alpha.1, )"
+          "Rewind.Abstractions": "[0.1.0, )"
         }
       },
       "rewind.storage": {
         "type": "Project",
         "dependencies": {
-          "Rewind.Agent.Core": "[1.0.0, )"
+          "Rewind.Agent.Core": "[0.1.0, )"
         }
       }
     },
