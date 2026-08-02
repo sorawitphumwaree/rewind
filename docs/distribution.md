@@ -66,8 +66,10 @@ NuGet packages are not duplicated as GitHub Release assets.
 5. Verify NuGet metadata, dependencies, target frameworks, and package README.
 6. Verify the Agent ZIP, configuration, schema, service scripts, documentation,
    SBOM, and checksums.
-7. Malware-scan and Authenticode-sign the Agent executable for a public release.
-8. Rebuild the Agent ZIP and checksums from the signed executable.
+7. Malware-scan the Agent executable.
+8. If trusted Authenticode signing is available, sign the executable and rebuild
+   the Agent ZIP and checksums. Until then, publish alpha versions only as
+   explicitly marked unsigned pre-releases.
 9. Create the release tag only after explicit owner approval.
 
 ## Required repository configuration
@@ -91,8 +93,10 @@ Ham's approval before deployment. The `publish-nuget` workflow has
 token for a one-hour NuGet API key. The temporary key exists only for that
 workflow run.
 
-Before public Agent publication, configure the selected Authenticode signing
-service or certificate as protected release-environment secrets.
+When trusted Authenticode signing becomes available, configure the selected
+signing service or certificate as protected release-environment secrets. Until
+then, public Agent releases remain pre-release versions and their notes must warn
+that the executable is unsigned.
 
 ## Publication
 
@@ -100,8 +104,7 @@ The NuGet publication workflow is manual and must not be run until:
 
 - the Trusted Publishing policy and protected `release` environment are
   configured;
-- trusted Authenticode signing is available;
-- the representative-host qualification and release checklist pass;
+- the automated release checklist passes;
 - Ham explicitly authorizes the tag and release.
 
 The workflow builds and verifies all artifacts, requests its short-lived key
@@ -111,3 +114,19 @@ by the workflow and must not be added to source or GitHub secrets.
 
 The GitHub Release should be created as a draft, assets attached and verified,
 then published only after all three NuGet packages are accepted.
+
+## Unsigned alpha policy
+
+Until Ham obtains trusted Authenticode signing capability:
+
+- Agent versions are published only as GitHub pre-releases;
+- release notes clearly state that the executable is unsigned;
+- `SHA256SUMS.txt` is attached and users are instructed to verify it before
+  unblocking or running downloaded files;
+- Smart App Control, antivirus, and machine-wide security controls must not be
+  disabled to run Rewind;
+- the absence of a signature remains a documented limitation, not an implied
+  trust claim.
+
+Once trusted signing is available, this temporary policy is retired and public
+Agent artifacts are signed before publication.

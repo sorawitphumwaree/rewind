@@ -1,8 +1,12 @@
 # Release checklist
 
 - [x] Ham accepts the documented “Rewind” naming risk and authorizes Apache-2.0.
-- [x] Private alpha is unsigned with SHA-256 checksums; public release requires trusted Authenticode signing.
-- [ ] All acceptance checks and the 24-hour soak pass on the reference host.
+- [x] Public alpha Agent releases are explicitly authorized unsigned until trusted
+  Authenticode signing becomes available; every release includes SHA-256
+  checksums and a visible unsigned-binary warning.
+- [x] All automated acceptance checks and CI smoke/soak gates pass.
+- [ ] The 24-hour soak and representative-host qualification are completed
+  before declaring production readiness.
 - [ ] Caller-path and Agent-resource reports are attached to the commit.
 - [x] `dotnet restore --locked-mode` and Release build pass locally.
 - [x] SDK packages and portable Agent artifact are produced locally.
@@ -15,6 +19,8 @@
 - [x] Direct and transitive dependencies report no known vulnerabilities from the configured NuGet sources on 2026-08-02.
 - [x] Clean-directory Agent startup verification passes locally.
 - [ ] Incident and configuration schemas validate their examples.
-- [x] Known limitations and upgrade notes match the private-alpha artifact.
-- [ ] Artifacts are malware-scanned and Authenticode-signed where applicable.
-- [ ] No tag or release is created without Ham's explicit instruction.
+- [x] Known limitations and upgrade notes match the public-alpha artifact.
+- [ ] Artifacts are malware-scanned before publication.
+- [ ] Agent artifacts are Authenticode-signed after trusted signing becomes
+  available.
+- [x] Ham explicitly authorized the unsigned `v0.1.0-alpha.1` public pre-release.

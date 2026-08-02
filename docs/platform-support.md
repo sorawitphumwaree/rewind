@@ -12,8 +12,8 @@ Last verified: 2026-08-02.
 - The current CI and local Release build compile both SDK targets.
 
 Runtime verification inside a representative .NET Framework 4.6.2 machine
-application and the 24-hour Windows 10 industrial-PC qualification remain release
-gates.
+application and the 24-hour Windows 10 industrial-PC qualification remain
+production-readiness gates. Alpha releases are evaluation builds.
 
 Sources:
 
