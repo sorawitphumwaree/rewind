@@ -10,7 +10,7 @@ jobs:
   build-release-candidate:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: actions/setup-dotnet@v5
         with:
           global-json-file: global.json
@@ -27,7 +27,7 @@ jobs:
         run: ./scripts/generate-checksums.ps1
       - shell: pwsh
         run: ./scripts/verify-artifacts.ps1
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: rewind-release-candidate
           path: artifacts/dist
