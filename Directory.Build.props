@@ -7,11 +7,11 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <LangVersion>latest</LangVersion>
     <AnalysisLevel>latest-recommended</AnalysisLevel>
-    <Version>0.1.0-alpha.1</Version>
+    <Version>0.1.0</Version>
     <Authors>Sorawit Phumwaree</Authors>
     <Copyright>Copyright © 2026 Sorawit Phumwaree</Copyright>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>Initial private-alpha SDK and Agent contract.</PackageReleaseNotes>
+    <PackageReleaseNotes>Initial stable Rewind SDK contract and Agent-compatible protocol.</PackageReleaseNotes>
     <RepositoryUrl>https://github.com/sorawitphumwaree/rewind</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>

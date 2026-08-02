@@ -115,13 +115,13 @@ timeline
 ### 1. Install the SDK
 
 ```powershell
-dotnet add package Rewind.Sdk --version 0.1.0-alpha.1
+dotnet add package Rewind.Sdk --version 0.1.0
 ```
 
 For a .NET Framework project using Visual Studio Package Manager Console:
 
 ```powershell
-Install-Package Rewind.Sdk -Version 0.1.0-alpha.1
+Install-Package Rewind.Sdk -Version 0.1.0
 ```
 
 Installing `Rewind.Sdk` automatically resolves the matching
@@ -160,7 +160,7 @@ RewindRecorder.TriggerIncident(
 ### 3. Run the Agent
 
 The Agent will be distributed as a self-contained Windows x64 ZIP through GitHub
-Releases. Public alpha Agent executables are unsigned until trusted Authenticode
+Releases. Public Agent executables are unsigned until trusted Authenticode
 signing becomes available. Verify the release checksum before running downloaded
 files.
 
@@ -257,7 +257,8 @@ payload round trips.
 - Configuration reload requires an Agent process or service restart.
 - Rewind is diagnostic evidence, not an audit log or guaranteed transactional
   event store.
-- Current NuGet packages and Agent behavior are pre-release alpha software.
+- Version `0.1.x` is the initial public release line. Representative industrial
+  host qualification and a production support commitment are not yet available.
 
 Read [known limitations](docs/known-limitations.md) and
 [platform support](docs/platform-support.md) before production evaluation.

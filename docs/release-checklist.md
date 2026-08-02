@@ -1,7 +1,7 @@
 # Release checklist
 
 - [x] Ham accepts the documented “Rewind” naming risk and authorizes Apache-2.0.
-- [x] Public alpha Agent releases are explicitly authorized unsigned until trusted
+- [x] Public Agent releases are explicitly authorized unsigned until trusted
   Authenticode signing becomes available; every release includes SHA-256
   checksums and a visible unsigned-binary warning.
 - [x] All automated acceptance checks and CI smoke/soak gates pass.
@@ -23,4 +23,4 @@
 - [ ] Artifacts are malware-scanned before publication.
 - [ ] Agent artifacts are Authenticode-signed after trusted signing becomes
   available.
-- [x] Ham explicitly authorized the unsigned `v0.1.0-alpha.1` public pre-release.
+- [x] Ham explicitly authorized the unsigned stable `v0.1.0` public release.

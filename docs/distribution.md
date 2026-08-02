@@ -19,7 +19,7 @@ notes use the same Semantic Version.
 Release tag format:
 
 ```text
-v0.1.0-alpha.1
+v0.1.0
 ```
 
 No tag, NuGet publication, or GitHub Release is created without Ham's explicit
@@ -68,8 +68,8 @@ NuGet packages are not duplicated as GitHub Release assets.
    SBOM, and checksums.
 7. Malware-scan the Agent executable.
 8. If trusted Authenticode signing is available, sign the executable and rebuild
-   the Agent ZIP and checksums. Until then, publish alpha versions only as
-   explicitly marked unsigned pre-releases.
+   the Agent ZIP and checksums. Until then, publish explicitly authorized
+   unsigned releases with a visible warning.
 9. Create the release tag only after explicit owner approval.
 
 ## Required repository configuration
@@ -95,8 +95,7 @@ workflow run.
 
 When trusted Authenticode signing becomes available, configure the selected
 signing service or certificate as protected release-environment secrets. Until
-then, public Agent releases remain pre-release versions and their notes must warn
-that the executable is unsigned.
+then, public Agent release notes must warn that the executable is unsigned.
 
 ## Publication
 
@@ -115,11 +114,10 @@ by the workflow and must not be added to source or GitHub secrets.
 The GitHub Release should be created as a draft, assets attached and verified,
 then published only after all three NuGet packages are accepted.
 
-## Unsigned alpha policy
+## Temporary unsigned release policy
 
 Until Ham obtains trusted Authenticode signing capability:
 
-- Agent versions are published only as GitHub pre-releases;
 - release notes clearly state that the executable is unsigned;
 - `SHA256SUMS.txt` is attached and users are instructed to verify it before
   unblocking or running downloaded files;

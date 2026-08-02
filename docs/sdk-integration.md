@@ -5,13 +5,13 @@
 Modern .NET:
 
 ```powershell
-dotnet add package Rewind.Sdk --version 0.1.0-alpha.1
+dotnet add package Rewind.Sdk --version 0.1.0
 ```
 
 .NET Framework Package Manager Console:
 
 ```powershell
-Install-Package Rewind.Sdk -Version 0.1.0-alpha.1
+Install-Package Rewind.Sdk -Version 0.1.0
 ```
 
 `Rewind.Sdk` targets .NET Framework 4.6.2 and .NET Standard 2.0. NuGet selects

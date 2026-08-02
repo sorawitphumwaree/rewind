@@ -1,6 +1,6 @@
 # Support policy
 
-Rewind is an experimental public alpha and has no production support promise.
+Rewind is an experimental `0.x` release and has no production support promise.
 Questions and defects should include the commit, OS edition/build, .NET runtime,
 configuration, health counters, and a sanitized incident package where relevant.
 

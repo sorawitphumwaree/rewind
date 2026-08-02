@@ -17,6 +17,6 @@
   have not been completed.
 - The selected project name has material public conflicts. The owner accepted
   that risk; availability of exact NuGet IDs is not trademark clearance.
-- Public alpha Agent executables are unsigned until trusted Authenticode signing
+- Public Agent executables are unsigned until trusted Authenticode signing
   becomes available. Verify `SHA256SUMS.txt` before running downloaded files and
   expect Windows reputation or security warnings.

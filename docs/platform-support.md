@@ -13,7 +13,7 @@ Last verified: 2026-08-02.
 
 Runtime verification inside a representative .NET Framework 4.6.2 machine
 application and the 24-hour Windows 10 industrial-PC qualification remain
-production-readiness gates. Alpha releases are evaluation builds.
+production-readiness gates. The current `0.x` release line remains experimental.
 
 Sources:
 

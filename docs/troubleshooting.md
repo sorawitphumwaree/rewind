@@ -2,7 +2,7 @@
 
 ## Windows blocks the executable or PowerShell scripts
 
-Public-alpha Agent artifacts are unsigned. First verify the ZIP checksum against
+Public Agent artifacts are unsigned. First verify the ZIP checksum against
 `SHA256SUMS.txt`. Then unblock only the extracted Rewind files:
 
 ```powershell
