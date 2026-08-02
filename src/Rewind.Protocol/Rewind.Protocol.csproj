@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net462;netstandard2.0</TargetFrameworks>
+    <PackageId>Rewind.Protocol</PackageId>
+    <Description>Wire protocol for the Rewind local incident flight recorder.</Description>
+    <PackageTags>rewind;diagnostics;named-pipes;protocol</PackageTags>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl Condition="'$(RepositoryUrl)' != ''">$(RepositoryUrl)</PackageProjectUrl>
+    <IsPackable>true</IsPackable>
+    <PackageReadmeFile>PACKAGE-README.md</PackageReadmeFile>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../Rewind.Abstractions/Rewind.Abstractions.csproj" />
+    <None Include="../../docs/nuget-protocol-readme.md" Pack="true" PackagePath="/PACKAGE-README.md" />
+  </ItemGroup>
+</Project>

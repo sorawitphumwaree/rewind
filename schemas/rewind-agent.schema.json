@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:rewind:schema:agent-configuration:1",
+  "title": "Rewind Agent configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "agent": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "pipeName": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "dataDirectory": { "type": "string", "minLength": 1 },
+        "maximumConcurrentClients": { "type": "integer", "minimum": 1, "maximum": 254 }
+      }
+    },
+    "buffer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "retentionSeconds": { "type": "number", "exclusiveMinimum": 0 },
+        "maximumEventCount": { "type": "integer", "minimum": 1 },
+        "maximumBytes": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "capture": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "preTriggerSeconds": { "type": "number", "minimum": 0 },
+        "postTriggerSeconds": { "type": "number", "minimum": 0 },
+        "maximumCaptureSeconds": { "type": "number", "minimum": 0 },
+        "mergeTriggers": { "type": "boolean" },
+        "maximumTriggersPerCapture": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "incidentStorage": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "maximumIncidentCount": { "type": "integer", "minimum": 1 },
+        "maximumBytes": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "levels": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "trace": { "$ref": "#/$defs/levelPolicy" },
+        "debug": { "$ref": "#/$defs/levelPolicy" },
+        "information": { "$ref": "#/$defs/levelPolicy" },
+        "warning": { "$ref": "#/$defs/levelPolicy" },
+        "error": { "$ref": "#/$defs/levelPolicy" },
+        "critical": { "$ref": "#/$defs/levelPolicy" }
+      }
+    },
+    "continuousLog": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "directoryName": { "type": "string", "minLength": 1 },
+        "maximumFileBytes": { "type": "integer", "minimum": 1 },
+        "maximumTotalBytes": { "type": "integer", "minimum": 1 },
+        "maximumFileCount": { "type": "integer", "minimum": 1 }
+      }
+    }
+  },
+  "$defs": {
+    "levelPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "buffer": { "type": "boolean" },
+        "persistContinuously": { "type": "boolean" },
+        "triggerIncident": { "type": "boolean" },
+        "includeInIncident": { "type": "boolean" }
+      }
+    }
+  }
+}

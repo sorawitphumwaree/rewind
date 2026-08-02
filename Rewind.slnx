@@ -1,0 +1,22 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Rewind.Abstractions/Rewind.Abstractions.csproj" />
+    <Project Path="src/Rewind.Protocol/Rewind.Protocol.csproj" />
+    <Project Path="src/Rewind.Sdk/Rewind.Sdk.csproj" />
+    <Project Path="src/Rewind.Agent.Core/Rewind.Agent.Core.csproj" />
+    <Project Path="src/Rewind.Storage/Rewind.Storage.csproj" />
+    <Project Path="src/Rewind.Agent.Host/Rewind.Agent.Host.csproj" />
+  </Folder>
+  <Folder Name="/samples/">
+    <Project Path="samples/Rewind.Sample.FaultSimulation/Rewind.Sample.FaultSimulation.csproj" />
+    <Project Path="samples/Rewind.Sample.Playground/Rewind.Sample.Playground.csproj" />
+    <Project Path="samples/Rewind.Sample.Playground.Component/Rewind.Sample.Playground.Component.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Rewind.Tests/Rewind.Tests.csproj" />
+    <Project Path="tests/Rewind.Soak/Rewind.Soak.csproj" />
+  </Folder>
+  <Folder Name="/benchmarks/">
+    <Project Path="benchmarks/Rewind.Sdk.Benchmarks/Rewind.Sdk.Benchmarks.csproj" />
+  </Folder>
+</Solution>

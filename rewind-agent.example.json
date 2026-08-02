@@ -1,0 +1,67 @@
+{
+  "agent": {
+    "pipeName": "Rewind.Agent",
+    "dataDirectory": "./data",
+    "maximumConcurrentClients": 16
+  },
+  "buffer": {
+    "retentionSeconds": 300,
+    "maximumEventCount": 100000,
+    "maximumBytes": 134217728
+  },
+  "capture": {
+    "preTriggerSeconds": 300,
+    "postTriggerSeconds": 60,
+    "maximumCaptureSeconds": 900,
+    "mergeTriggers": true,
+    "maximumTriggersPerCapture": 64
+  },
+  "levels": {
+    "trace": {
+      "buffer": true,
+      "persistContinuously": false,
+      "triggerIncident": false,
+      "includeInIncident": true
+    },
+    "debug": {
+      "buffer": true,
+      "persistContinuously": false,
+      "triggerIncident": false,
+      "includeInIncident": true
+    },
+    "information": {
+      "buffer": true,
+      "persistContinuously": false,
+      "triggerIncident": false,
+      "includeInIncident": true
+    },
+    "warning": {
+      "buffer": true,
+      "persistContinuously": true,
+      "triggerIncident": false,
+      "includeInIncident": true
+    },
+    "error": {
+      "buffer": true,
+      "persistContinuously": true,
+      "triggerIncident": true,
+      "includeInIncident": true
+    },
+    "critical": {
+      "buffer": true,
+      "persistContinuously": true,
+      "triggerIncident": true,
+      "includeInIncident": true
+    }
+  },
+  "incidentStorage": {
+    "maximumIncidentCount": 100,
+    "maximumBytes": 5368709120
+  },
+  "continuousLog": {
+    "directoryName": "logs",
+    "maximumFileBytes": 104857600,
+    "maximumTotalBytes": 5368709120,
+    "maximumFileCount": 100
+  }
+}

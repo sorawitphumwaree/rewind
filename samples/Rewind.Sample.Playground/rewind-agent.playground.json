@@ -1,0 +1,37 @@
+{
+  "agent": {
+    "pipeName": "Rewind.Playground",
+    "dataDirectory": "./data",
+    "maximumConcurrentClients": 4
+  },
+  "buffer": {
+    "retentionSeconds": 30,
+    "maximumEventCount": 10000,
+    "maximumBytes": 16777216
+  },
+  "capture": {
+    "preTriggerSeconds": 20,
+    "postTriggerSeconds": 5,
+    "maximumCaptureSeconds": 30,
+    "mergeTriggers": true,
+    "maximumTriggersPerCapture": 16
+  },
+  "levels": {
+    "trace": { "buffer": true, "persistContinuously": false, "triggerIncident": false, "includeInIncident": true },
+    "debug": { "buffer": true, "persistContinuously": false, "triggerIncident": false, "includeInIncident": true },
+    "information": { "buffer": true, "persistContinuously": false, "triggerIncident": false, "includeInIncident": true },
+    "warning": { "buffer": true, "persistContinuously": true, "triggerIncident": false, "includeInIncident": true },
+    "error": { "buffer": true, "persistContinuously": true, "triggerIncident": true, "includeInIncident": true },
+    "critical": { "buffer": true, "persistContinuously": true, "triggerIncident": true, "includeInIncident": true }
+  },
+  "incidentStorage": {
+    "maximumIncidentCount": 20,
+    "maximumBytes": 1073741824
+  },
+  "continuousLog": {
+    "directoryName": "logs",
+    "maximumFileBytes": 10485760,
+    "maximumTotalBytes": 104857600,
+    "maximumFileCount": 20
+  }
+}

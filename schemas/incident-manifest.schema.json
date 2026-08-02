@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:rewind:schema:incident-manifest:1",
+  "title": "Rewind incident manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "protocolVersion",
+    "status",
+    "incidentId",
+    "completedUtc",
+    "eventCount",
+    "triggerCount",
+    "clients",
+    "knownLosses",
+    "truncationObserved",
+    "clockDiscontinuities"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "protocolVersion": { "const": 1 },
+    "status": { "const": "complete" },
+    "incidentId": { "type": "string", "format": "uuid" },
+    "completedUtc": { "type": "string", "format": "date-time" },
+    "eventCount": { "type": "integer", "minimum": 0 },
+    "triggerCount": { "type": "integer", "minimum": 1 },
+    "captureStartedUtc": { "type": ["string", "null"], "format": "date-time" },
+    "captureEndedUtc": { "type": ["string", "null"], "format": "date-time" },
+    "clients": { "type": "array", "items": { "type": "string", "format": "uuid" }, "uniqueItems": true },
+    "knownLosses": { "type": "object" },
+    "truncationObserved": { "type": "boolean" },
+    "clockDiscontinuities": { "type": "integer", "minimum": 0 }
+  }
+}
