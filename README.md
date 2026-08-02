@@ -160,8 +160,9 @@ RewindRecorder.TriggerIncident(
 ### 3. Run the Agent
 
 The Agent will be distributed as a self-contained Windows x64 ZIP through GitHub
-Releases. Until the first Agent release is available, build it from source or use
-the playground below.
+Releases. Public alpha Agent executables are unsigned until trusted Authenticode
+signing becomes available. Verify the release checksum before running downloaded
+files.
 
 ```powershell
 Rewind.Agent.Host.exe --config C:\ProgramData\Rewind\rewind-agent.json

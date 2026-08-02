@@ -5,7 +5,7 @@ lifetimes. Test the configuration interactively before installing the service.
 
 ## Identity requirement
 
-The private alpha uses current-user Named Pipe isolation. The Windows Service and
+The current alpha uses current-user Named Pipe isolation. The Windows Service and
 instrumented application must run under the same Windows account.
 
 Use a dedicated least-privilege local or domain account when appropriate. Grant

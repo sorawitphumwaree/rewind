@@ -5,7 +5,7 @@
   no Agent acknowledgement and does not prove durable storage.
 - Same-user Named Pipe isolation is implemented. Deployments that run the Agent
   service and machine application under different Windows identities require an
-  explicit ACL design that is not included in the private alpha.
+  explicit ACL design that is not included in the current alpha.
 - Windows Service hosting and installation scripts exist, but clean-machine
   service installation still requires qualification.
 - Configuration is read only at Agent startup. Users restart the process or
@@ -17,5 +17,6 @@
   have not been completed.
 - The selected project name has material public conflicts. The owner accepted
   that risk; availability of exact NuGet IDs is not trademark clearance.
-- Private alpha executables are unsigned. A trusted Authenticode identity is
-  required before public release.
+- Public alpha Agent executables are unsigned until trusted Authenticode signing
+  becomes available. Verify `SHA256SUMS.txt` before running downloaded files and
+  expect Windows reputation or security warnings.

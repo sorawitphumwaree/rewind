@@ -38,7 +38,7 @@ From the matching GitHub Release, download:
 The Agent package is self-contained for Windows x64. The target PC does not need
 a separate .NET runtime for the Agent.
 
-Private-alpha artifacts are checksum-verified but unsigned. Verify the downloaded
+Public-alpha Agent artifacts are checksum-verified but unsigned. Verify the downloaded
 ZIP against `SHA256SUMS.txt` before extracting it. If Windows marks the verified
 files as downloaded and blocks them, unblock only the extracted Rewind files:
 
