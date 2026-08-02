@@ -1,0 +1,31 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-verify:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v5
+        with:
+          global-json-file: global.json
+      - run: dotnet restore Rewind.slnx --locked-mode
+      - run: dotnet build Rewind.slnx --configuration Release --no-restore
+      - run: dotnet run --project tests/Rewind.Tests --configuration Release --no-build
+      - run: dotnet run --project benchmarks/Rewind.Sdk.Benchmarks --configuration Release --no-build -- 1000
+      - run: dotnet run --project tests/Rewind.Soak --configuration Release --no-build -- 5 100
+      - shell: pwsh
+        run: ./scripts/build-artifacts.ps1 -RepositoryUrl "${{ github.server_url }}/${{ github.repository }}"
+      - shell: pwsh
+        run: ./scripts/generate-sbom.ps1
+      - shell: pwsh
+        run: ./scripts/generate-checksums.ps1
+      - shell: pwsh
+        run: ./scripts/verify-artifacts.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rewind-build
+          path: artifacts/dist
